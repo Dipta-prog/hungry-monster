@@ -22,9 +22,8 @@ const searchFood = foodName => {
 
 // display search result
 const displayFoodItem = foods => {
-    
     const foodsDiv = document.getElementById("foods");
-    foods.map((food,i) => {
+    foods.map((food, i) => {
         const foodDiv = document.createElement('div');
         foodDiv.className = 'food';
         foodDiv.setAttribute("onclick", `foodIngredients(storeResult.meals[${i}])`);
@@ -55,7 +54,7 @@ const foodIngredients = food => {
         li.innerText = `${Measure} ${Ingredient}`;
         if (Measure === " " || Ingredient === " ");
         else if (Measure === "" || Ingredient === "");
+        else if (Measure === null || Ingredient === null);
         else ul.appendChild(li);
-        console.log(`${Measure} ${Ingredient}`);
     }
 }
